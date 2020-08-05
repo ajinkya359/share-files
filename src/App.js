@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+
+const server__url="https://987dfeb3baa7.ngrok.io/uploads"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <form action={server__url} method="POST" encType="multipart/form-data">
+          <input
+          type="text"
+          name="uploadername"
+          placeholder="Enter your name please"
+          required/>
+          <input
+          type="file"
+          placeholder="name"
+          name="file"/>
+          <input type={"submit"} value={"hi"}/>
+      </form>
     </div>
   );
 }
